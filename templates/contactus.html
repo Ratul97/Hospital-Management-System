@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Contact Us{% endblock title %} | Medicare</title>
+    
+</head>
+<body>
+    {% block body %}
+    
+
+<div class="container ">
+    <h1 class="text-center m-5 font-weight-bold">Contact Us</h1>
+    
+
+    <div class="row  text-center  " style="margin:80px;">
+  <div class="col col-lg-3 col-sm-6 mydiv">
+      <h4 class=""><i class="far fa-address-book "> Contact</i></h4>
+      <p class="" ><a class="btn btn-dark" href="tel:+880130000000">+880130000000000</a></p>
+</div>
+  <div class="col col-lg-3 col-sm-6 mydiv">
+      <h4><i class="far fa-envelope"> Email</i></h4>
+        <p><a class="btn btn-dark" href="mailto:xyz@gmail.com">xyz@gmail.com</a></p>
+    </div>
+
+  <div class="col col-lg-3 col-sm-6 mydiv ">
+      <h4><i class="fas fa-map-marker-alt"> Address</i></h4>
+      <p><a class="btn btn-dark" href="http://maps.google.com/maps?q=dhaka">Dhaka</a></p>
+    </div>
+  <div class="col col-lg-3 col-sm-6 mydiv">
+      <h4><i class="far fa-clock"> Office Hour</i></h4>
+      <p class="btn btn-dark" >9AM to 9PM</p>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<style>
+    .mydiv{
+        
+        border-radius: 10%;
+    }
+    a{
+        text-decoration: none;
+    }
+    .mydiv:hover{
+        box-shadow: 0 0 20px 0 black;
+        transform: translateY(-20px);
+    }
+</style>
+    
+    {% endblock body %}
+
+</body>
+</html>

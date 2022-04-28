@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% ifequal error "no" %}
+<script>
+  alert('Record saved successfully!');
+  window.location = "{% url 'view_appointment' %}";
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+  alert('Invalid record! try again');
+</script>
+{% endifequal %}
+<div class="container my-5">
+  <h2 class="text-center">Add appointment</h2>
+  <form method="POST">
+    {% csrf_token %}
+  <div class=" mb-3">
+    <label >Doctor name</label>
+    <select class="form-control" name="doctor" />
+    {% for i in doctor %}
+    <option value="{{i.name}}">{{i.name}}</option>
+    {% endfor%}
+  </select>
+  </div>
+  <div class=" mb-3">
+    <label >Patient Name</label>
+    <select class="form-control" name="patient" />
+    {% for i in patient %}
+    <option value="{{i.name}}">{{i.name}}</option>
+    {% endfor%}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label >Date</label>
+    <input type="date" class="form-control" name="date" />
+  </div>
+  <div class="mb-3">
+    <label >Time</label>
+    <input type="time" class="form-control" name="time" />
+  </div>
+  
+  <button type="submit" value="submit" class="btn btn-primary form-control" >Submit</button>
+
+
+</form>
+</div>
+{% endblock body %}

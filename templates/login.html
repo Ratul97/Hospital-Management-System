@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% ifequal error "no" %}
+<script>
+  alert('Logged in successfully!');
+  window.location = "{% url 'dashboard' %}";
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+  alert('Invalid login! try again');
+</script>
+{% endifequal %}
+<div class="container my-5">
+  <h2 class="text-center">Admin Login</h2>
+  <form method="POST">
+    {% csrf_token %}
+  <div class=" mb-3">
+    <label >Admin name</label>
+    <input type="text" class="form-control" name="uname">
+  </div>
+  <div class="mb-3">
+    <label >Password</label>
+    <input type="password" class="form-control" name="pwd">
+  </div>
+  
+  <button type="submit" class="btn btn-primary form-control" >Submit</button>
+
+
+</form>
+<br><br><br><br>
+</div>
+{% endblock body %}

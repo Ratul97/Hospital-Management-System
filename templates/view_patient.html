@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<br>
+
+<div class="container ">
+  <h2>View Patient</h2>
+  <table id="example" class="table table-hover display nowrap" style="width:100%">
+    <thead>
+      <tr>
+       
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in doc %}
+      <tr>
+       
+        <td>{{i.name}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.address}}</td>
+        <td>
+            <a
+            href="{% url 'delete_patient' i.id %}"
+            onclick="return confirm('Confirm?')"
+            class="btn btn-danger">Delete</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <br>
+  <br>
+{% endblock body %}
